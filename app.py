@@ -3,7 +3,7 @@ from transformers import GPT2LMHeadModel, GPT2Tokenizer, pipeline
 
 @st.cache_resource
 def load_generator():
-    model_id = "neerajwankhede06/gpt2-news-model"  # Your Hugging Face repo
+    model_id = "Neeraj24/gpt2-scifi-stories-model"  # Your Hugging Face repo
     tokenizer = GPT2Tokenizer.from_pretrained(model_id)
     model = GPT2LMHeadModel.from_pretrained(model_id)
     return pipeline("text-generation", model=model, tokenizer=tokenizer)
