@@ -16,7 +16,7 @@ st.markdown("Write scifi stories using your fine-tuned GPT-2 model....")
 prompt = st.text_area("Enter a news prompt:", height=150, placeholder="e.g. The rocket touched the surface of mars....")
 
 temperature = st.slider("Creativity (temperature)", 0.5, 1.2, 0.9, 0.1)
-length = st.slider("Max output length", 50, 300, 150, 10, 5)
+length = st.slider("Max output length", 50, 300, 150, 10)
 
 if st.button("Generate"):
     with st.spinner("Generating..."):
