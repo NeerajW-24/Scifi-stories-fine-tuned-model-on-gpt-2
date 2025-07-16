@@ -10,16 +10,16 @@ def load_generator():
 
 generator = load_generator()
 
-st.title("📰 Fine-Tuned GPT-2 News Generator")
-st.markdown("Write news reports using your fine-tuned GPT-2 model from Hugging Face.")
+st.title("🚀 Fine-Tuned GPT-2 scifi stories Generator 🌌")
+st.markdown("Write scifi stories using your fine-tuned GPT-2 model....")
 
-prompt = st.text_area("Enter a news prompt:", height=150, placeholder="e.g. In a fiery speech at the Lok Sabha today...")
+prompt = st.text_area("Enter a news prompt:", height=150, placeholder="e.g. The rocket touched the surface of mars....")
 
-temperature = st.slider("Creativity (temperature)", 0.5, 1.5, 0.9, 0.1)
-length = st.slider("Max output length", 50, 300, 150, 10)
+temperature = st.slider("Creativity (temperature)", 0.5, 1.2, 0.9, 0.1)
+length = st.slider("Max output length", 50, 300, 150, 10, 5)
 
 if st.button("Generate"):
     with st.spinner("Generating..."):
         output = generator(prompt, max_new_tokens=length, do_sample=True, temperature=temperature)[0]["generated_text"]
-        st.subheader("📝 Generated Text")
+        st.subheader("🛰️Generated Text")
         st.write(output)
